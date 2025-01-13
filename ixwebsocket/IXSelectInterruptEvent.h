@@ -4,6 +4,11 @@
 
 #pragma once
 
+#if __CYGWIN__
+#define _WIN32
+#define _WIN32_WINNT 0x0A00 // win10
+#endif
+
 #include "IXSelectInterrupt.h"
 #include <cstdint>
 #include <mutex>

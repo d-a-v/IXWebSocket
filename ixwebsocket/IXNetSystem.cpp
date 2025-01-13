@@ -238,7 +238,11 @@ namespace ix
                 }
             }
 
+#if __CYGWIN__
+            TIMEVAL tv;
+#else
             struct timeval tv;
+#endif
             tv.tv_sec = timeout / 1000;
             tv.tv_usec = (timeout % 1000) * 1000;
 
